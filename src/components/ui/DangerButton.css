@@ -1,0 +1,104 @@
+.danger-button {
+  position: fixed;
+  top: 5rem;
+  right: 1.5rem;
+  z-index: 50;
+  background-color: #facc15;
+  color: black;
+  padding: 0.75rem;
+  border-radius: 9999px;
+  box-shadow: 0 0 15px #facc15;
+  transition: transform 0.2s ease;
+}
+.danger-button:hover {
+  transform: scale(1.1);
+}
+
+.alien-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* UFO and Beam */
+.ufo {
+  position: absolute;
+  top: 0;
+  left: -200px;
+  width: 100px;
+  height: 100px;
+  animation: flyAcross 5s linear forwards;
+  z-index: 45;
+}
+
+.ufo-base {
+  width: 100px;
+  height: 40px;
+  background: radial-gradient(circle at 50% 50%, #aaa, #333);
+  border-radius: 50% 50% 20% 20%;
+  position: relative;
+  z-index: 2;
+}
+
+/* Light Beam */
+.beam {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 150px;
+  background: linear-gradient(to bottom, rgba(0, 255, 0, 0.3), transparent);
+  z-index: 1;
+  animation: beamFade 2s ease-in-out infinite;
+}
+
+@keyframes flyAcross {
+  0% {
+    top: 10%;
+    left: -200px;
+  }
+  50% {
+    top: 30%;
+    left: 50%;
+  }
+  100% {
+    top: 10%;
+    left: 120%;
+  }
+}
+
+@keyframes beamFade {
+  0%, 100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+/* Invasion Text */
+.invasion-text {
+  position: absolute;
+  bottom: 20%;
+  width: 100%;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: lime;
+  text-shadow: 2px 2px 8px black;
+  animation: popText 1.2s ease-out;
+}
+
+@keyframes popText {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

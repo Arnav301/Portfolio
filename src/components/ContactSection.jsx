@@ -103,7 +103,7 @@ export const ContactSection = () => {
                   <Instagram />
                 </a>
                 <a href="#" target="_blank">
-                  <Twitch />
+                  <Mail />
                 </a>
               </div>
             </div>

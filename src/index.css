@@ -162,3 +162,19 @@
   padding: 0;
   text-align: center;
 }
+
+@keyframes asteroidLeft {
+  0% { left: -100px; }
+  100% { left: 50%; }
+}
+@keyframes asteroidRight {
+  0% { right: -100px; }
+  100% { right: 50%; }
+}
+
+.animate-asteroid-left {
+  animation: asteroidLeft 3s linear forwards;
+}
+.animate-asteroid-right {
+  animation: asteroidRight 3s linear forwards;
+}
