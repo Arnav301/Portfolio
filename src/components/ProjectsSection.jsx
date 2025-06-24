@@ -16,9 +16,9 @@ const projects = [
     description:
       "Interactive analytics dashboard with data visualization and filtering capabilities.",
     image: "health.png",
-    tags: ["React", "CSS", "Node.js"],
-    demoUrl: "#",
-    githubUrl: "#",
+    tags: ["React", "TailwindCSS", "Node.js"],
+    demoUrl: "https://healthtracker112.netlify.app/",
+    githubUrl: "https://github.com/Arnav301/Health-Tracker.git",
   },
   {
     id: 3,
