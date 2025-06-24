@@ -12,10 +12,10 @@ const projects = [
   },
   {
     id: 2,
-    title: "Landing page",
+    title: "Health Tracker",
     description:
       "Interactive analytics dashboard with data visualization and filtering capabilities.",
-    image: "/projects/project2.png",
+    image: "health.png",
     tags: ["TypeScript", "D3.js", "Next.js"],
     demoUrl: "#",
     githubUrl: "#",
