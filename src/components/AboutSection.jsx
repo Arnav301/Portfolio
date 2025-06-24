@@ -13,7 +13,7 @@ export const AboutSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <h3 className="text-2xl font-semibold">
-              Passionate Web Developer & Tech Creator
+              Creative Web Developer & Tech Enthusiast 
             </h3>
 
             <p className="text-muted-foreground">
@@ -23,8 +23,7 @@ export const AboutSection = () => {
             </p>
 
             <p className="text-muted-foreground">
-             I am a full-stack developer working with the MERN stack 
-             to build dynamic web applications. I’m also deepening my 
+              I’m also deepening my 
              Java skills by consistently practicing data structures and algorithms for better logic and clean code.
             </p>
 
