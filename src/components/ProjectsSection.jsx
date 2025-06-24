@@ -7,7 +7,7 @@ const projects = [
     description: "Empowering learning through real connections — a peer-to-peer platform where people teach, learn, and grow together.",
     image: "SkillDrift.png",
     tags: ["React", "TailwindCSS", "Next.js"],
-    demoUrl: "#",
+    demoUrl: "https://skilldrift1.netlify.app/",
     githubUrl: "https://github.com/kalviumcommunity/S84_Arnav_SkillDrift.git",
   },
   {
