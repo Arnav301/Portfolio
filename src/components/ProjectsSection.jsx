@@ -12,23 +12,23 @@ const projects = [
   },
   {
     id: 2,
+    title: "Budget Manager",
+    description:
+      "An intuitive budgeting dashboard with visual insights and smart filters to track expenses, set savings goals, and manage financial habits effortlessly.",
+    image: "budget.png",
+    tags: ["React", "TailwindCSS", "Node.js"],
+    demoUrl: "https://budmanager.netlify.app/",
+    githubUrl: "https://github.com/kalviumcommunity/S84_Smart_Budget_Manager.git",
+  },
+  {
+    id: 3,
     title: "Health Tracker",
     description:
       "An interactive health dashboard with visual insights and smart filters to monitor wellness metrics like steps, hydration, and sleep patterns.",
     image: "health.png",
     tags: ["React", "TailwindCSS", "Node.js"],
-    demoUrl: "https://healthtracker112.netlify.app/",
+    demoUrl:  "https://healthtracker112.netlify.app/",
     githubUrl: "https://github.com/Arnav301/Health-Tracker.git",
-  },
-  {
-    id: 3,
-    title: "Weather Platform",
-    description:
-      "Forecasting made simple — a beautifully intuitive weather experience that keeps you prepared, wherever you go.",
-    image: "/projects/project3.png",
-    tags: ["HTML", "CSS", "JAVASCRIPT"],
-    demoUrl: "#",
-    githubUrl: "#",
   },
 ];
 
