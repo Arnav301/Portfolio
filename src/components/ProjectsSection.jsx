@@ -14,7 +14,7 @@ const projects = [
     id: 2,
     title: "Health Tracker",
     description:
-      "Interactive analytics dashboard with data visualization and filtering capabilities.",
+      "An interactive health dashboard with visual insights and smart filters to monitor wellness metrics like steps, hydration, and sleep patterns.",
     image: "health.png",
     tags: ["React", "TailwindCSS", "Node.js"],
     demoUrl: "https://healthtracker112.netlify.app/",
