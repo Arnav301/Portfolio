@@ -16,7 +16,7 @@ const projects = [
     description:
       "Interactive analytics dashboard with data visualization and filtering capabilities.",
     image: "health.png",
-    tags: ["TypeScript", "D3.js", "Next.js"],
+    tags: ["React", "CSS", "Node.js"],
     demoUrl: "#",
     githubUrl: "#",
   },
