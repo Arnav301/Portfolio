@@ -10,6 +10,7 @@ import {
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
+import emailjs from "@emailjs/browser"; // make sure this is imported
 
 // ✅ Custom SVG for Twitter "X" logo
 const XLogo = () => (
@@ -27,19 +28,36 @@ const XLogo = () => (
 export const ContactSection = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     setIsSubmitting(true);
 
-    setTimeout(() => {
-      toast({
-        title: "Message sent!",
-        description: "Thank you for your message. I'll get back to you soon.",
+    emailjs
+      .sendForm(
+        import.meta.env.VITE_SERVICE_ID,
+        import.meta.env.VITE_TEMPLATE_ID,
+        e.target,
+        import.meta.env.VITE_PUBLIC_KEY
+      )
+      .then(() => {
+        toast({
+          title: "Message sent!",
+          description: "Thank you for your message. I'll get back to you soon.",
+        });
+        setFormData({ name: "", email: "", message: "" });
+        setIsSubmitting(false);
+      })
+      .catch((error) => {
+        console.error("EmailJS Error:", error);
+        alert("Oops! Something went wrong. Please try again.");
+        setIsSubmitting(false);
       });
-      setIsSubmitting(false);
-    }, 1500);
   };
 
   return (
@@ -49,14 +67,14 @@ export const ContactSection = () => {
           Get In <span className="text-primary"> Touch</span>
         </h2>
 
-        <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+        <p className="flex justify-center text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
           Have a project in mind or want to collaborate? Feel free to reach out.
           I'm always open to discussing new opportunities.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div className="space-y-8">
-            <h3 className="text-2xl font-semibold mb-6">Contact Information</h3>
+          <div className="space-y-8 flex flex-col justify-center items-center m-auto">
+            <h3 className="flex text-4xl font-bold mb-6 pl-15 text-primary  hover:text-purple-300 ">Contact Information</h3>
 
             <div className="space-y-6 justify-center">
               <div className="flex items-start space-x-4">
@@ -74,37 +92,22 @@ export const ContactSection = () => {
                 </div>
               </div>
 
-              <div className="flex items-start space-x-4">
-                <div className="p-3 rounded-full bg-primary/10">
-                  <Phone className="h-6 w-6 text-primary" />
-                </div>
-                <div>
-                  <h4 className="font-medium">Phone</h4>
-                  <a
-                    href="tel:+9190414XXXXX"
-                    className="text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    +91 90414 xxxxx
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-4">
+              <div className="flex items-center space-x-4">
                 <div className="p-3 rounded-full bg-primary/10">
                   <MapPin className="h-6 w-6 text-primary" />
                 </div>
                 <div>
-                  <h4 className="font-medium">Location</h4>
-                  <a className="text-muted-foreground hover:text-primary transition-colors">
+                  <h4 className="font-medium pl-13">Location</h4>
+                  <a className="pl-13 text-muted-foreground hover:text-primary transition-colors">
                     Ropar, Punjab
                   </a>
                 </div>
               </div>
             </div>
 
-            <div className="pt-8">
-              <h4 className="font-medium mb-5">Socials</h4>
-              <div className="flex space-x-4 justify-center">
+            <div className="pt-8 pl-12">
+              <h4 className="flex font-medium mb-5 pl-7">Socials</h4>
+              <div className="space-x-4 flex items-center">
                 <a
                   href="https://www.linkedin.com/in/arnav-verma-46b788360/"
                   target="_blank"
@@ -113,19 +116,12 @@ export const ContactSection = () => {
                   <Linkedin />
                 </a>
                 <a
-                  href="https://x.com/verma_arna40492?t=35WlhzS3Zv-8LaprHFipoA&s=08 "
+                  href="https://x.com/verma_arna40492?t=35WlhzS3Zv-8LaprHFipoA&s=08"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <XLogo />
                 </a>
-                {/* <a
-                  href="#"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Instagram />
-                </a> */}
                 <a
                   href="https://github.com/Arnav301"
                   target="_blank"
@@ -137,13 +133,10 @@ export const ContactSection = () => {
             </div>
           </div>
 
-          <div
-            className="bg-card p-10 rounded-lg shadow-xs"
-            onSubmit={handleSubmit}
-          >
+          <div className="bg-card p-10 rounded-lg shadow-xs">
             <h3 className="text-2xl font-semibold mb-6">Send a Message</h3>
 
-            <form className="space-y-6">
+            <form className="space-y-6" onSubmit={handleSubmit}>
               <div>
                 <label htmlFor="name" className="block text-sm font-medium mb-2">
                   Your Name
@@ -155,6 +148,10 @@ export const ContactSection = () => {
                   required
                   className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary"
                   placeholder="John Doe..."
+                  value={formData.name}
+                  onChange={(e) =>
+                    setFormData({ ...formData, name: e.target.value })
+                  }
                 />
               </div>
 
@@ -169,6 +166,10 @@ export const ContactSection = () => {
                   required
                   className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary"
                   placeholder="john@gmail.com"
+                  value={formData.email}
+                  onChange={(e) =>
+                    setFormData({ ...formData, email: e.target.value })
+                  }
                 />
               </div>
 
@@ -182,6 +183,10 @@ export const ContactSection = () => {
                   required
                   className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary resize-none"
                   placeholder="Hello, I'd like to talk about..."
+                  value={formData.message}
+                  onChange={(e) =>
+                    setFormData({ ...formData, message: e.target.value })
+                  }
                 />
               </div>
 
