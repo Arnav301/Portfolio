@@ -34,13 +34,13 @@ const skills = [
   },
   {
     name: "JavaScript",
-    level: 85,
+    level: 80,
     category: "frontend",
     icon: <SiJavascript className="text-yellow-400 text-xl" />,
   },
   {
     name: "React",
-    level: 90,
+    level: 85,
     category: "frontend",
     icon: <SiReact className="text-cyan-400 text-xl" />,
   },
@@ -50,13 +50,7 @@ const skills = [
     category: "frontend",
     icon: <SiTailwindcss className="text-sky-400 text-xl" />,
   },
-  {
-    name: "Next.js",
-    level: 80,
-    category: "frontend",
-    icon: <SiNextdotjs className="text-black dark:text-white text-xl" />,
-  },
-
+  
   // Backend
   {
     name: "Node.js",
@@ -84,7 +78,7 @@ const skills = [
   },
   {
   name: "Python",
-  level: 85,
+  level: 75,
   category: "backend",
   icon: (
     <img
@@ -111,7 +105,7 @@ const skills = [
   },
   {
     name: "Figma",
-    level: 85,
+    level: 80,
     category: "tools",
     icon: <SiFigma className="text-pink-500 text-xl" />,
   },
