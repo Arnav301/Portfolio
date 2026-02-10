@@ -12,13 +12,13 @@ const projects = [
   },
   {
     id: 2,
-    title: "Budget Manager",
+    title: "Cosmic Well",
     description:
-      "An intuitive budgeting dashboard with visual insights and smart filters to track expenses, set savings goals, and manage financial habits effortlessly.",
-    image: "budget.png",
-    tags: ["React", "TailwindCSS", "Node.js"],
+      "A digital wellbeing platform that tracks screen activity, analyzes focus patterns, and provides smart insights to improve productivity and reduce digital fatigue.",
+    image: "CosmicWell.png",
+    tags: ["React", "TailwindCSS", "Node.js", "Electron.js"],
     demoUrl: "https://budmanager.netlify.app/",
-    githubUrl: "https://github.com/kalviumcommunity/S84_Smart_Budget_Manager.git",
+    githubUrl: "https://github.com/Arnav301/CosmicWell.git",
   },
   {
     id: 3,
