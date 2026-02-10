@@ -23,7 +23,7 @@ const skills = [
   // Frontend
   {
     name: "HTML/CSS",
-    level: 95,
+    level: 90,
     category: "frontend",
     icon: (
       <div className="flex gap-1 text-xl">
@@ -54,7 +54,7 @@ const skills = [
   // Backend
   {
     name: "Node.js",
-    level: 85,
+    level: 90,
     category: "backend",
     icon: <SiNodedotjs className="text-green-600 text-xl" />,
   },

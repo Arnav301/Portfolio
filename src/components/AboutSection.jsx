@@ -34,7 +34,7 @@ export const AboutSection = () => {
               </a>
 
               <a
-                href="#projects"
+                href="https://docs.google.com/document/d/1TUTX9n3MrsgCdKWs2iDm3sOt4aMbZPTJ/edit"
                 className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300"
               >
                 View Resume

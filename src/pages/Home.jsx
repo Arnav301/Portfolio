@@ -7,7 +7,7 @@ import { SkillsSection } from "../components/SkillsSection";
 import { ProjectsSection } from "../components/ProjectsSection";
 import { ContactSection } from "../components/ContactSection";
 import { Footer } from "../components/Footer";
-import { DangerButton } from "@/components/ui/DangerButton"; // ✅ Import the button
+import { DangerButton } from "@/components/ui/DangerButton";
 
 export const Home = () => {
   return (
@@ -30,9 +30,6 @@ export const Home = () => {
 
       {/* Footer */}
       <Footer />
-
-      {/* ✅ Global Danger Button */}
-      <DangerButton />
     </div>
   );
 };
