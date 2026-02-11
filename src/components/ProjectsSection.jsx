@@ -17,7 +17,7 @@ const projects = [
       "A digital wellbeing platform that tracks screen activity, analyzes focus patterns, and provides smart insights to improve productivity and reduce digital fatigue.",
     image: "CosmicWell.png",
     tags: ["React", "TailwindCSS", "Node.js", "Electron.js"],
-    demoUrl: "https://budmanager.netlify.app/",
+    demoUrl: "#",
     githubUrl: "https://github.com/Arnav301/CosmicWell.git",
   },
   {
